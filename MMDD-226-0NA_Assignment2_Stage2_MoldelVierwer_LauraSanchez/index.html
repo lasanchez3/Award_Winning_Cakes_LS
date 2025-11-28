@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Award-Winning Cakes - Humber Polytechnic</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <img src="models/cover.jpg" alt="Award-winning cakes showcase" class="header-image">
+        <h1>Award-Winning Cakes</h1>
+        <p class="subtitle">Explore 3D creations from Humber Polytechnic students</p>
+    </header>
+
+    <main>
+        <section class="featured-cake">
+            <h2>Featured Cake</h2>
+            <div class="featured-wrapper">
+                <model-viewer 
+                    id="featured-viewer"
+                    src="models/blackforest.glb"
+                    alt="Featured 3D Cake"
+                    camera-controls
+                    auto-rotate
+                    interaction-policy="allow-when-focused"
+                    ar
+                    ar-modes="webxr scene-viewer quick-look"
+                    shadow-intensity="1.47"
+                    shadow-softness="1"
+                    exposure="1"
+                    tone-mapping="neutral">
+                    <button class="Hotspot" slot="hotspot-1" data-position="0.008552046686475492m 0.034118657294680735m 0.02173477727617923m" data-normal="-0.7453505957990462m -0.12471397104714986m 0.6549037446584479m" data-visibility-attribute="visible">
+                        <div class="HotspotAnnotation">2025 Winners!</div>
+                    </button>
+                    <div class="progress-bar hide" slot="progress-bar">
+                        <div class="update-bar"></div>
+                    </div>
+                    <button slot="ar-button" id="ar-button">
+                        View in your space
+                    </button>
+                    <div id="ar-prompt">
+                        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+                    </div>
+                </model-viewer>
+                <div class="cake-info">
+                    <h2 id="cakeTitle">Black Forest Cake</h2>
+                    <p id="cakeDescription">A classic German dessert featuring layers of chocolate sponge cake, cherries, and whipped cream, topped with chocolate shavings.</p>
+                    <button id="nextCakeBtn">Next Cake</button>
+                </div>
+            </div>
+            <p class="featured-title" id="featured-title">Black Forest Cake</p>
+        </section>
+
+        <section class="cake-gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <div class="thumbnail" 
+                     data-model="models/carousel.glb" 
+                     data-title="Carousel Cake"
+                     id="thumbnail-1">
+                    <model-viewer 
+                        src="models/carousel.glb"
+                        alt="Carousel Cake"
+                        camera-controls
+                        interaction-policy="allow-when-focused"
+                        disable-zoom>
+                    </model-viewer>
+                    <p class="thumbnail-title">Carousel Cake</p>
+                </div>
+
+                <div class="thumbnail" 
+                     data-model="models/chocolate.glb" 
+                     data-title="Chocolate Cake"
+                     id="thumbnail-2">
+                    <model-viewer 
+                        src="models/chocolate.glb"
+                        alt="Chocolate Cake"
+                        camera-controls
+                        interaction-policy="allow-when-focused"
+                        disable-zoom>
+                    </model-viewer>
+                    <p class="thumbnail-title">Chocolate Cake</p>
+                </div>
+
+                <div class="thumbnail" 
+                     data-model="models/flower-25.glb" 
+                     data-title="Flower 25 Cake"
+                     id="thumbnail-3">
+                    <model-viewer 
+                        src="models/flower-25.glb"
+                        alt="Flower 25 Cake"
+                        camera-controls
+                        interaction-policy="allow-when-focused"
+                        disable-zoom>
+                    </model-viewer>
+                    <p class="thumbnail-title">Flower 25 Cake</p>
+                </div>
+
+                <div class="thumbnail" 
+                     data-model="models/flower-cake.glb" 
+                     data-title="Flower Cake"
+                     id="thumbnail-4">
+                    <model-viewer 
+                        src="models/flower-cake.glb"
+                        alt="Flower Cake"
+                        camera-controls
+                        interaction-policy="allow-when-focused"
+                        disable-zoom>
+                    </model-viewer>
+                    <p class="thumbnail-title">Flower Cake</p>
+                </div>
+
+                <div class="thumbnail" 
+                     data-model="models/strawberry.glb" 
+                     data-title="Strawberry Cake"
+                     id="thumbnail-5">
+                    <model-viewer 
+                        src="models/strawberry.glb"
+                        alt="Strawberry Cake"
+                        camera-controls
+                        interaction-policy="allow-when-focused"
+                        disable-zoom>
+                    </model-viewer>
+                    <p class="thumbnail-title">Strawberry Cake</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="hero-sequence" class="hero-section">
+            <div class="hero-content">
+                <!-- Column 1: Sticky Canvas (stays fixed while scrolling) -->
+                <div class="hero-canvas-wrapper">
+                    <canvas id="heroCanvas" aria-label="Cake animation sequence"></canvas>
+                </div>
+                
+                <!-- Column 2: Scrollable Long Text Article -->
+                <div class="hero-article">
+                    <h2>From Sketch to Showcase</h2>
+                    <p>Every award submission begins as a careful sketch before it becomes a fully sculpted centerpiece. This scroll-driven sequence reveals those steps frame by frame.</p>
+                    <p>As you move down the page, you are scrubbing through 40 handcrafted renders captured by our multimedia students for this year&rsquo;s winning cake.</p>
+                    
+                    <h3>The Art of 3D Modeling</h3>
+                    <p>The journey from concept to completion in 3D cake modeling is a meticulous process that combines artistic vision with technical precision. Our students at Humber Polytechnic learn to transform their creative ideas into digital masterpieces that can be viewed, rotated, and examined from every angle.</p>
+                    
+                    <p>Each model begins with careful planning and research. Students study real-world cake designs, understanding the textures, colors, and structural elements that make each creation unique. This foundational knowledge is crucial before any digital work begins.</p>
+                    
+                    <h3>Technical Mastery</h3>
+                    <p>Creating a 3D model requires proficiency in multiple software tools and techniques. Students learn to use industry-standard applications to sculpt, texture, and render their designs. The process involves creating detailed geometry, applying realistic materials, and setting up proper lighting to showcase the cake&rsquo;s best features.</p>
+                    
+                    <p>Texture mapping is particularly important in cake modeling. The subtle variations in frosting, the shine of chocolate ganache, and the delicate appearance of sugar flowers all require careful attention to detail. Students learn to create and apply textures that capture these nuances, making their digital creations look almost edible.</p>
+                    
+                    <h3>The Animation Sequence</h3>
+                    <p>The 40-frame sequence you see here represents hours of work. Each frame is carefully rendered to show the progression from initial concept to final presentation. As you scroll through this article, the animation advances, creating an immersive storytelling experience.</p>
+                    
+                    <p>This scroll-driven approach allows viewers to control the pace of their exploration. You can pause at any moment to examine a particular stage of the process, or scroll quickly to see the overall transformation. This interactive element makes the learning experience more engaging and memorable.</p>
+                    
+                    <h3>Collaboration and Innovation</h3>
+                    <p>Our multimedia design and development program emphasizes collaboration. Students work together to refine their techniques, share knowledge, and push the boundaries of what&rsquo;s possible in digital cake design. This collaborative environment fosters innovation and helps students develop skills that extend beyond individual projects.</p>
+                    
+                    <p>The award-winning cakes featured on this site represent the culmination of months of learning, practice, and refinement. Each model tells a story not just of the final product, but of the journey taken to create it.</p>
+                    
+                    <h3>Looking Forward</h3>
+                    <p>As technology continues to evolve, so too do the possibilities for 3D modeling and visualization. Our students are at the forefront of exploring new techniques and applications, from augmented reality experiences to virtual reality showcases. The skills they develop here prepare them for careers in digital design, animation, and interactive media.</p>
+                    
+                    <p>The future of cake design may well include virtual tastings, interactive customization tools, and immersive presentation experiences. Our students are learning the tools and techniques that will make these innovations possible.</p>
+                    
+                    <p>We invite you to explore these award-winning creations, to rotate them, examine them from every angle, and appreciate the artistry and technical skill that went into each one. Every model represents countless hours of dedication, creativity, and learning.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="photo-gallery">
+            <h2>Take a look at how this award was made</h2>
+            <p class="photo-gallery-intro">Behind every award-winning cake is a process of creativity, precision, and dedication. Explore the journey from initial concept to final presentation.</p>
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <img src="models/images/1.jpg" alt="Award-winning cake process image 1">
+                </div>
+                <div class="photo-item">
+                    <img src="models/images/2.jpg" alt="Award-winning cake process image 2">
+                </div>
+                <div class="photo-item">
+                    <img src="models/images/3.jpg" alt="Award-winning cake process image 3">
+                </div>
+                <div class="photo-item">
+                    <img src="models/images/4.jpg" alt="Award-winning cake process image 4">
+                </div>
+                <div class="photo-item">
+                    <img src="models/images/5.jpg" alt="Award-winning cake process image 5">
+                </div>
+                <div class="photo-item">
+                    <img src="models/images/6.jpg" alt="Award-winning cake process image 6">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Humber College – Multimedia Design & Development</p>
+        <p class="footer-note">This website is part of a school project showcasing student work.</p>
+    </footer>
+
+</body>
+</html>
